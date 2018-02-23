@@ -9,13 +9,16 @@ import { SearchComponent } from './search/search.component';
 import { RoutingModule } from './routing/routing.module';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderService } from './loader/loader.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService, LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

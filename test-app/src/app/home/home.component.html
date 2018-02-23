@@ -1,11 +1,29 @@
 
-<form action="" method="POST" class="form-inline" role="form" (submit)="submit(search.value)">
+<form class="form search-form" 
+  #form="ngForm"
+  role="form" 
+  (submit)="submit(search.value)">
 
-  <div class="form-group">
-    <label class="sr-only" for="">Search</label>
-    <input type="text" ngModel #search="ngModel" class="form-control" name="search" placeholder="Search..." />
+  <div class="search-logo">
+    <img src="assets/images/logo.jpg" />
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="input-group input-group-lg">
+    <input type="text" 
+      ngModel 
+      #search="ngModel" 
+      class="form-control" 
+      name="search" 
+      placeholder="Search tweet..."
+      required />
+    <div class="input-group-append">
+      <button [disabled]="!form.valid" class="btn btn-outline-secondary" type="submit">Search</button>
+    </div>
+    <div class="invalid-feedback" [hidden]="search.valid || !search.touched" style="display: block">
+      Please enter text to search.
+    </div>
+  </div>
 </form>
+
+
 

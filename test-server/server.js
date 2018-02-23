@@ -24,10 +24,6 @@ app.listen(8000, () => {
 app.route('/api/tweets/:search').get((req, res) => {
   const requestedTweet = req.params['search'];
   client.get('search/tweets', {q: requestedTweet, count: 50}, function(error, tweets, response) {
-		console.log('error', error);
-		console.log('tweets', tweets);
-		console.log('response', response);
-
 		res.send({ 
 			error: error,
 			tweets: tweets,

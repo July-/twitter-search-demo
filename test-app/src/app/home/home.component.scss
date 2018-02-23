@@ -1,0 +1,25 @@
+.search-form {
+	min-height: 100vh;
+	display: flex;
+	max-width: 600px;
+	margin: 0 auto;
+	align-content: center;
+	flex-wrap: wrap;
+
+	.form-control:focus {
+		box-shadow: none;
+	}
+}
+
+.search-logo {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding-bottom: 50px;
+	
+	img {
+		width: 120px;
+		height: auto;
+		align-self: center;
+	}
+}
